@@ -1,9 +1,9 @@
 body, html{
 	margin: 0;
 	padding: 0;
-    border: 0;
+    border: 1px solid;
     outline: 0;
-  -ms-overflow-style: none; 
+  /*-ms-overflow-style: none; */
   scrollbar-width: none;
     cursor: crosshair;
 }
@@ -31,6 +31,10 @@ html::-webkit-scrollbar {
   position: fixed;
   left: 90%;
   top: 1%;
-  width: 5%;
+  width: 6%;
 
 }
+
+/*canvas{
+  border:solid;
+}*/

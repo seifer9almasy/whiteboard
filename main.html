@@ -3,43 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport"content="width=device-width, initial-scale=1.0">
+<link rel="javascript"type="text/js"href="jquery-3.6.0.js">
 <link rel="stylesheet"type="text/css"href="style.css">
 <title>Whiteboard</title>
 </head>
 <body>
 
-
-<input onchange ="getThing()" type="color" id="C" class="C" value="#000000">
-<input onchange ="getThing()" type="number" id="S" class="S"value="5">
-<input onclick ="clearAll()" type="button" id="B" class="B" >
-
+<!--<textarea id="area_text" value="saisissez votre texte"></textarea>-->
+<input onchange ="getThing()" type="button" value="Ecrivez Votre texte">
+<input onchange ="getThing()" type="color" id="C" class="C" value="HTML code">
+<input onchange ="getThing()" type="number" id="S" class="S"value="Size">
+<input onclick ="clearAll()" type="button" id="B" class="B" value="Erase">
 <canvas id="canvas"></canvas>
-
-
-
 <script>
+
+
+
+/*recuperation du canvas*/
 var canvas = document.getElementById("canvas");
+//recuperation des valeurs internes des mesures du canvas
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 var ctx = canvas.getContext("2d");
+var drawing = false;
 
 
 
+
+//action sur les bouton couleur et identifiant couleur html
 function getThing() {
+	/*retrieve value of clear button and number for color*/
 	var getC = document.getElementById("C").value;
 	var getS = document.getElementById("S").value;
-
+	//return value of color and HTML ref color
 	return {
 		getC, getS
 	};
 }
 
-
+//effacage zone de dessin
 function clearAll(){
 	canvas.width = canvas.width;
+	document.getElementById("area_text").value = "";
 }
 
 function draw(e) {
+
+	// if there is no drawing drawing = false
 	if (drawing == false) return;
 	let editor = getThing();
 	ctx.lineWidth = editor.getS;
@@ -51,11 +61,12 @@ function draw(e) {
 
 }
 
+// begin the drawing
 function startDraw(e) {
 	drawing = true;
 	draw(e);
 }
-
+// erase drawing
 function overDraw() {
 	drawing = false;
 	ctx.beginPath();
