@@ -6,6 +6,7 @@ body, html{
   /*-ms-overflow-style: none; */
   scrollbar-width: none;
     cursor: crosshair;
+    border:5px solid #21177D;
 }
 
 html::-webkit-scrollbar {
@@ -35,6 +36,9 @@ html::-webkit-scrollbar {
 
 }
 
-/*canvas{
-  border:solid;
-}*/
+#Message {
+  position: fixed;
+  left: 60%;
+  top: 1%;
+  width: 6%;
+}

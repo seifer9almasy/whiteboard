@@ -1,16 +1,46 @@
-<!DOCTYPE html>
+		<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport"content="width=device-width, initial-scale=1.0">
 <link rel="javascript"type="text/js"href="jquery-3.6.0.js">
 <link rel="stylesheet"type="text/css"href="style.css">
+<!--dependance pour fenetre modale contenant le texte a envoyer depuis le tableau -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
 <title>Whiteboard</title>
 </head>
 <body>
+<!-- Trigger the modal with a button -->
+<button id="Message" type="button" class="btn btn-info btn-xs  position: fixed;
+  left: 90%;
+  top: 1%;
+  width: 6%;" data-toggle="modal" data-target="#myModal">Manual</button>
 
-<!--<textarea id="area_text" value="saisissez votre texte"></textarea>-->
-<input onchange ="getThing()" type="button" value="Ecrivez Votre texte">
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog">
+		
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<!--<h4 class="modal-title">Notice d'utilisation</h4>-->
+				</div>
+				<div class="modal-body">
+					<P>Firefox: use File>Save as>save your document where you want in your Operating System (Windows | Mac | Linux)</P>
+					<p>Chrome: left click + Save As</p>
+					<p>Opera: left click + page + Save As</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+			
+		</div>
+	</div>
 <input onchange ="getThing()" type="color" id="C" class="C" value="HTML code">
 <input onchange ="getThing()" type="number" id="S" class="S"value="Size">
 <input onclick ="clearAll()" type="button" id="B" class="B" value="Erase">
